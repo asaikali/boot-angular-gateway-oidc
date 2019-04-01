@@ -18,21 +18,22 @@ oauth:
       - approvals.me
       - oauth.approvals
   clients:
-    quotes:
+    gateway:
       name: quotes
       secret: secret
       autoapprove: true
       authorized-grant-types: authorization_code
-      scope: openid,profile,email
+      scope: openid,profile,email,resource.read
       authorities: uaa.resource
-      redirect-uri: http://localhost:8080/login/oauth2/code/quotes
+      redirect-uri: http://localhost:7777/login/oauth2/code/gateway
 
 
 scim:
   groups:
     email: Access your email address
   users:
-    - user|password|user1@oauth2-flows.io|first1|last1|uaa.user,profile,email
+    - user|password|user1@oauth2-flows.io|first1|last1|uaa.user,profile,email,resource.read
+
 
 jwt:
   token:
